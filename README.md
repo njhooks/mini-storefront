@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mini Storefront
 
-## Getting Started
+This project is a basic storefront built with React (Next.js) for ISM3232.  
+It demonstrates core React concepts such as state management, component communication, and data filtering.  
+The structure and functionality follow the examples shown in the Module 9 lecture slides.
 
-First, run the development server:
+---
 
+## How to Run Locally
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Then open your browser and go to:
+```
+http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## How to Build for Production
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project Structure
+src/
+ ├── app/
+ │   ├── page.jsx              // Server Component
+ │   ├── api/
+ │   │   └── products/route.js // API route returning JSON
+ │   └── components/
+ │       ├── Catalog.jsx
+ │       ├── ProductList.jsx
+ │       ├── ProductCard.jsx
+ │       ├── CategoryFilter.jsx
+ │       ├── PriceFilter.jsx
+ │       ├── CartSummary.jsx
+ │       └── StatusMessage.jsx
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features Implemented
+- Displays a list of products using `.map()`
+- Category and price filters for user selection
+- Cart summary with add, remove, and reset functions
+- API route that returns sample product data
+- Status messages for loading, error, and empty results
+- State updates handled immutably with React hooks
+- Basic inline styling for layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Concepts Demonstrated
+- State management with `useState`
+- Component communication through props
+- Derived values using `map()` and `reduce()`
+- Controlled inputs and form handling
+- Lifting state up between components
+- useEffect for fetching data and cleanup
+- Conditional rendering for user feedback
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+- Built with Next.js and React
+- Product data is static and returned from an API route
+- Styling is done inline for simplicity
+- The code and structure follow the Module 9 rubric
+- No known issues or errors at this time
